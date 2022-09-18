@@ -1,4 +1,5 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
+import { useNavigate } from "react-router";
 import { TopicContext } from "../../context";
 import cl from "./Home.module.scss";
 
@@ -6,6 +7,12 @@ interface HomeProps {
   topic?: string;
 }
 const Home: React.FC<HomeProps> = ({ topic = "Выберите тему" }) => {
+  const navigate=useNavigate()
+  useEffect(()=>{
+    if(!topic){
+      navigate("/")
+    }
+  },[])
   return (
     <div className={cl.home}>
       <h1 className={cl.home__title}>{topic}</h1>
