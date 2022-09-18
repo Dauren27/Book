@@ -7,12 +7,12 @@ interface HomeProps {
   topic?: string;
 }
 const Home: React.FC<HomeProps> = ({ topic = "Выберите тему" }) => {
-  const navigate=useNavigate()
-  useEffect(()=>{
-    if(!topic){
-      navigate("/")
+  const navigate = useNavigate();
+  useEffect(() => {
+    if (!topic) {
+      navigate("/");
     }
-  },[])
+  }, []);
   return (
     <div className={cl.home}>
       <h1 className={cl.home__title}>{topic}</h1>
