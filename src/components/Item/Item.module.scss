@@ -1,0 +1,29 @@
+.sidebar__item {
+  margin-top: 40px;
+  .sidebar__title {
+    font-size: 25px;
+    margin-left: -20px;
+    cursor: pointer;
+    svg {
+      margin-bottom: -5px;
+      margin-left: 5px;
+      &.open {
+        transform: rotate(180deg);
+      }
+    }
+  }
+  .sidebar__subtitles {
+    display: none;
+    &.open {
+      display: block;
+    }
+    .sidebar__subtitle {
+      margin-top: 10px;
+      font-size: 16px;
+      cursor: pointer;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
